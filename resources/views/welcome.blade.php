@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Мой интернет магазин</title>
+    <title>Мой сайтик</title>
     <link rel="stylesheet" href="/public/assets/css/bootstrap.css">
     <script src="/public/assets/js/bootstrap.bundle.js"></script>
 </head>
@@ -42,8 +42,8 @@
                                 Администрирование
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="">Добавить пользователя</a></li>
-                                <li><a class="dropdown-item" href="">Все пользователи</a></li>
+                                <li><a class="dropdown-item" href="{{route('admin.users.create')}}">Добавить пользователя</a></li>
+                                <li><a class="dropdown-item" href="{{route('admin.users.index')}}">Все пользователи</a></li>
                             </ul>
                         </li>
                     @endif
