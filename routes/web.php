@@ -4,9 +4,8 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [\App\Http\Controllers\NewsController::class, 'index'])->name('welcome');
+
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::post('/login', [UserController::class, 'loginPost']);
 
@@ -24,6 +23,9 @@ Route::middleware('auth')->group(function (){
             });
             });
         });
+        Route::resource('/news', \App\Http\Controllers\NewsController::class);
     });
+
+
     Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 });

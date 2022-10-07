@@ -5,22 +5,31 @@
             <div class="col"></div>
             <div class="col-8 mt-4">
                 <h1>Все пользователи</h1>
-                <div class="row">
-                    @foreach($users as $user)
-                        <div class="col-4 mt-4">
-                            <div class="card" style="width: 100%">
-                                <img src="/public/storage/{{$user->photo}}" class="card-img-top" alt="{{$user->name}}">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{$user->fullname}}</h5>
-                                    <p class="card-text">Email: {{$user->email}}</p>
-                                    <p class="card-text">Дата рождения: {{$user->birthday}}</p>
-                                    <p class="card-text">Роль: {{$user->role}}</p>
-                                    <a href="{{route('admin.users.show', ['user'=>$user->id])}}" class="btn btn-primary">Посмотреть</a>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Фото</th>
+                        <th scope="col">ФИО</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Дата рождения</th>
+                        <th scope="col">Роль</th>
+                        <th scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @forelse($users as $user)
+                            <tr>
+                                <td><img width="50px" height="36px" src="/public/storage/{{$user->photo}}"></td>
+                                <td>{{$user->fullname}}</td>
+                                <td>{{$user->email}}</td>
+                                <td>{{$user->birthday}}</td>
+                                <td>{{$user->role}}</td>
+                                <td><a href="{{route('admin.users.show', ['user'=>$user->id])}}" class="btn btn-primary">Посмотреть</a></td>
+                            </tr>
+                        @empty
+                        @endforelse
+                    </tbody>
+                </table>
             </div>
             <div class="col"></div>
         </div>

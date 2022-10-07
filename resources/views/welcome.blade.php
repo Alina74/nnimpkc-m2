@@ -19,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Главная</a>
+                    <a class="nav-link active" aria-current="page" href="/">Новости</a>
                 </li>
                 @guest
                     <li class="nav-item">
@@ -30,12 +30,6 @@
                     </li>
                 @endguest
                 @auth
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Мои заказы</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Мой аккаунт</a>
-                    </li>
                     @if(\Illuminate\Support\Facades\Auth::user()->role=='admin')
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" id="navbarDropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">

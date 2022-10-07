@@ -73,17 +73,18 @@ class UserController extends Controller
 
     public function store(UserCreateValidation $request)
     {
-        $validate=$request->validated();
+        $validate = $request->validated();
+        $validate['password']=Hash::make($validate['password']);
         unset($validate['photo_file']);
         $photo=$request->file('photo_file')->store('public');
         $validate['photo']=explode('/', $photo)[1];
-
         User::create($validate);
         return back()->with(['success'=>true]);
     }
     public function update(UserUpdateValidation $request, User $user)
     {
         $validate=$request->validated();
+        $validate['password']=Hash::make($validate['password']);
         unset($validate['photo_file']);
         if ($request->hasFile('photo_file')){
             $photo=$request->file('photo_file')->store('public');

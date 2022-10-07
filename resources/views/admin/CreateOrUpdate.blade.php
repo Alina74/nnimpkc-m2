@@ -50,10 +50,10 @@
                     <div class="input-group mb-3">
                         <label for="inputSelect" class="input-group-text">Роль:</label>
                         <select name="role" id="inputSelect" class="form-select @error('role') is-invalid @enderror" aria-describedby="invalidInputRole">
-                            <option selected>Выберите...</option>
-                            <option value="1">User</option>
-                            <option value="2">Admin</option>
-                            <option value="3">Moder</option>
+                            <option >Выберите...</option>
+                            <option @if(old('role')=='user')selected @endif  value="user">user</option>
+                            <option @if(old('role')=='admin')selected @endif value="admin">admin</option>
+                            <option @if(old('role')=='moder')selected @endif  value="moder">moder</option>
                         </select>
                         @error('role')
                         <div id="invalidInputRole" class="invalid-feedback"> {{$message}} </div>
