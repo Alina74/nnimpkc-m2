@@ -5,12 +5,12 @@
             <div class="col"></div>
             <div class="col-8">
                 <div class="card mt-4">
-                    <div class="card-header"><h4>{{$news->header}}</h4></div>
+                    <div class="card-header"><h4>{{\App\Models\User::find($news->user_id)->email}}</h4></div>
                     <div class="card-body text-center">
                         <img src="{{'/public/storage/' . $news->photo}}" class="card-img-top w-50 mb-3" alt="{{$news->name}}">
-                        <p class="card-text fs-5">Заголовок: {{$news->header}}</p>
-                        <p class="card-text">Полное описание: {{$news->fulldesc}}</p>
+                        <p class="card-text fs-3">{{$news->header}}</p>
                         <p class="card-text">Краткое описание: {{$news->abbrdesc}}</p>
+                        <p class="card-text">Полное описание: {{$news->fulldesc}}</p>
                         <p class="card-text">Тэги: {{$news->tag}}</p>
                         <p class="card-text">Дата создания: {{$news->created_at}}</p>
                         <p class="card-text">Дата редактирования: {{$news->updated_at}}</p>
@@ -31,11 +31,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Удалить пользователя {{$news->name}}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Удалить новость {{$news->name}}?</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Вы точно хотите удалить пользователя?<br>
+                    Вы точно хотите удалить новость?<br>
                     {{$news->name}}
                 </div>
                 <div class="modal-footer">

@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col"></div>
-            <div class="col-10">
+            <div class="col-10  mt-4">
                 <h1>Авторизация пользователя</h1>
                 @auth
                     <div class="alert alert-success">Вы успешно авторизовались</div>

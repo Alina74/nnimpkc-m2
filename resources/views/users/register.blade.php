@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col"></div>
-            <div class="col-10">
+            <div class="col-10 mt-4">
                 <h1>Регистрация нового пользователя</h1>
                 @auth
                     <div class="alert alert-primary">Вы уже авторизованы. Регистрация не возможна!</div>
@@ -62,7 +62,7 @@
                             <div id="ValidationPolicy" class="invalid-feedback">{{$message}}</div>
                             @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">Регистрация</button>
+                        <button type="submit" class="btn btn-primary mt-3">Регистрация</button>
                     </form>
                 @endguest
             </div>

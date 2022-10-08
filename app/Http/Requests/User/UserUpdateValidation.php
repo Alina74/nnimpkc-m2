@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 class UserUpdateValidation extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
+     * Определение, авторизован ли пользователь для выполнения этого запроса.
      *
      * @return bool
      */
@@ -17,7 +17,7 @@ class UserUpdateValidation extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Получение правил проверки, применимых к запросу.
      *
      * @return array<string, mixed>
      */

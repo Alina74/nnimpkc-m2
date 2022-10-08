@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class NewsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Показ всех новостей на одной странице
      *
      * @return \Illuminate\Http\Response
      */
@@ -21,7 +21,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Показ страницы добавления новости
      *
      * @return \Illuminate\Http\Response
      */
@@ -31,7 +31,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Сохранение новой новости в бд после валидации
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -48,7 +48,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Показ страницы с выбранной новостью
      *
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
@@ -59,7 +59,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Показ страницы редактирования новости
      *
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response
@@ -71,7 +71,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Обновление указанной новости в бд после валидации
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\News  $news
@@ -90,7 +90,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Удаление выбранной новости
      *
      * @param  \App\Models\News  $news
      * @return \Illuminate\Http\Response

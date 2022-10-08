@@ -10,12 +10,12 @@
                         <div class="alert alert-success">Новость отредактирована!</div>
                     @endif
                 @else
-                    <h1>Создание новости</h1>
+                    <h1 >Добавление новости</h1>
                     @if(session()->has('success'))
                         <div class="alert alert-success">Новость успешно создана!</div>
                     @endif
                 @endif
-                <form method="post" action="{{(isset($news) ? route('news.update',['news'=>$news->id]):route('news.store'))}}" enctype="multipart/form-data">
+                <form class="mt-3" method="post" action="{{(isset($news) ? route('news.update',['news'=>$news->id]):route('news.store'))}}" enctype="multipart/form-data">
                     @csrf
                     @isset($news)
                         <input  type="hidden" name="_method" value="put">
@@ -28,17 +28,17 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="inputFulldesc" class="form-label">Полное описание:</label>
-                        <input type="text" name="fulldesc" class="form-control @error('fulldesc') is-invalid @enderror" id="inputFulldesc" aria-describedby="invalidInputFulldesc" value="{{old('fulldesc')}}">
-                        @error('fulldesc')
-                        <div id="invalidInputFulldesc" class="invalid-feedback"> {{$message}} </div>
+                        <label for="inputAbbrdesc" class="form-label">Короткое описание:</label>
+                        <textarea rows="2" type="text" name="abbrdesc" class="form-control @error('abbrdesc') is-invalid @enderror" id="inputAbbrdesc" aria-describedby="invalidInputAbbrdesc">{{old('abbrdesc')}}</textarea>
+                        @error('abbrdesc')
+                        <div id="invalidInputAbbrdesc" class="invalid-feedback"> {{$message}} </div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="inputAbbrdesc" class="form-label">Короткое описание:</label>
-                        <input type="text" name="abbrdesc" class="form-control @error('abbrdesc') is-invalid @enderror" id="inputAbbrdesc" aria-describedby="invalidInputAbbrdesc" value="{{old('abbrdesc')}}">
-                        @error('abbrdesc')
-                        <div id="invalidInputAbbrdesc" class="invalid-feedback"> {{$message}} </div>
+                        <label for="inputFulldesc" class="form-label">Полное описание:</label>
+                        <textarea rows="10" type="text" name="fulldesc" class="form-control @error('fulldesc') is-invalid @enderror" id="inputFulldesc" aria-describedby="invalidInputFulldesc">{{old('fulldesc')}}</textarea>
+                        @error('fulldesc')
+                        <div id="invalidInputFulldesc" class="invalid-feedback"> {{$message}} </div>
                         @enderror
                     </div>
                     <div class="mb-3">
@@ -49,6 +49,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
+                        <label for="inputFile" class="form-label">Фото:</label>
                         <input name="photo_file" class="form-control @error('photo_file') is-invalid @enderror" type="file" id="inputFile" aria-describedby="invalidInputFile">
                         @error('photo_file')
                         <div id="invalidInputFile" class="invalid-feedback"> {{$message}} </div>
